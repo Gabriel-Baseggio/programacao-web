@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Bona Nova', serif;
+    font-size: large;
+    color: #143072;
+    background-color: #c4d9f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    margin: 10px;
+    background-image : url(../images/paperTexture.avif);
+    background-size: cover;
+    width: 50%;
+    padding: 20px 50px;
+    border-radius: 10px;
+    text-align: justify;
+}
+
+img {
+    width: 70%;
+    margin: 10px 15%;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
+li {
+    margin: 5px 0;
+}
