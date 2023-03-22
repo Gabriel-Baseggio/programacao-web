@@ -9,7 +9,6 @@ body {
     margin: 20px 0;
     color: #E3C567;
     background-color: #D1462F;
-    scroll-behavior: smooth;
 }
 
 legend {
@@ -73,7 +72,7 @@ div {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 div > * {
