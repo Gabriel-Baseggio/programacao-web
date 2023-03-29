@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.outer {
+    width: 90%;
+    border: 1px solid;
+    text-align: center;
+    background-color: green;
+}
+
+.inner {
+    border: 20px solid ;
+    background-color: greenyellow;
+    margin: 20px;
+    padding: 20px;
+}
+
+p {
+    font-size: 2rem;
+    margin: 0;
+    background-color: lightgreen;
+}
+
+a {
+    padding: 10px 20px;
+    font-size: 2rem;
+    font-weight: 900;
+    text-decoration: none;
+    border: 1px solid black;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+a:hover {
+    border: 1px solid blue;
+    background-color: white;
+    color: blue;
+}

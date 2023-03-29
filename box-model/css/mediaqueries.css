@@ -1,0 +1,26 @@
+body { 
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+    height: 100px;
+    background-color: black;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        background-color: blue;
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        background-color: red;
+        width: 100%;
+    }
+}
