@@ -3,7 +3,7 @@
 :root {
     --cor-primaria: #000000;
     --cor-secundaria: #F6F6F6;
-    --cor-terciaria: #22D4FD;
+    --cor-terciaria: #FFA500;
     --cor-hover: #DDDDDD;
     --fonte-primaria: 'Poppins', sans-serif;;
     --fonte-secundaria: 'Montserrat', sans-serif;
@@ -21,6 +21,10 @@ body {
 
 #logo {
     width: 5rem;
+}
+
+#logo > img {
+    filter: drop-shadow(0px 0px 5px var(--cor-terciaria));
 }
 
 .cabecalho {
@@ -45,7 +49,7 @@ body {
 }
 
 .cabecalho_menu a:hover{
-    color: var(--cor-hover);
+    text-shadow: 0px 0px 5px var(--cor-terciaria);
 }
 
 .cabecalho_menu li {
@@ -57,8 +61,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 5rem;
-    padding: 5% 15%;
-    width: 70%;
+    padding: 5% 5%;
 }
 
 .apresentacao_conteudo {
@@ -95,27 +98,58 @@ body {
 }
 
 .apresentacao_links_link {
-    padding: 1.2rem 0;
-    width: 70%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    border: 1px solid var(--cor-terciaria);
-    border-radius: 5px;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    width: 50%;
+    border: 2px solid var(--cor-terciaria);
+    border-radius: 10px;
+    text-decoration: none;
     color: var(--cor-secundaria);
     font-family: var(--fonte-primaria);
-    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.fa-brands {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao_imagem {
+    width: 50%;
+}
+
+.apresentacao_imagem img {
+    width: 100%;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.apresentacao_imagem img:hover, .apresentacao_links_link:hover {
+    transition: 0.3s;
+    box-shadow: 0px 0px 20px var(--cor-terciaria);
 }
 
 .rodape {
-    width: 100%;
-    height: 5rem;
+    padding: 1.5rem;
     background-color: var(--cor-terciaria);
     color: var(--cor-primaria);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-family: var(--fonte-primaria);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+@media (max-width: 768px) {
+    .apresentacao {
+        flex-direction: column-reverse;
+    }
+
+    .apresentacao_conteudo {
+        width: auto;
+    }
+}
