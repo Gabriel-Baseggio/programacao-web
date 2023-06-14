@@ -10,7 +10,7 @@ const adicionarTarefa = function () {
   // Criando um elemento li
   let novaTarefa = document.createElement("li");
 
-  if (nomeTarefa 0 {
+  if (nomeTarefa.length() == 0) {
     alert("Dê um nome à tarefa");
     return;
   }
