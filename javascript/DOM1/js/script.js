@@ -1,64 +1,82 @@
-// Selecionando elementos
 let campoTarefa = document.querySelector("#campo-tarefa");
 let botaoAdicionar = document.querySelector("#botao-adicionar");
 let listaTarefas = document.querySelector("#lista-tarefas");
+let tarefasSalvas = JSON.parse(localStorage.getItem("tarefas")) || [];
+tarefasSalvas.forEach(adicionarTarefaNaLista);
 
-// Criando e adicionando elementos
-const adicionarTarefa = function () {
-  // Pegar o valor do campo de texto
+botaoAdicionar.addEventListener("click", () => {
   let nomeTarefa = campoTarefa.value;
-  // Criando um elemento li
-  let novaTarefa = document.createElement("li");
 
-  if (nomeTarefa.length() == 0) {
+  if (nomeTarefa.length == 0) {
     alert("Dê um nome à tarefa");
     return;
   }
 
-  // Alterando o texto do li para o texto do campo de texto
-  novaTarefa.innerText = nomeTarefa;
+  tarefasSalvas.push(nomeTarefa);
+  adicionarTarefaNaLista(nomeTarefa)
+});
 
-  // Adicionando a nova li à lista de tarefas
-  listaTarefas.appendChild(novaTarefa);
+campoTarefa.addEventListener("keyup", function (e) {
+  if (e.key === "Enter") {
+    let nomeTarefa = campoTarefa.value;
 
-  // Adicionando a classe de tarefa na nova tarefa
+    if (nomeTarefa.length == 0) {
+      alert("Dê um nome à tarefa");
+      return;
+    }
+    
+    tarefasSalvas.push(nomeTarefa);
+    adicionarTarefaNaLista(nomeTarefa)
+  }
+});
+
+function adicionarTarefaNaLista(nomeTarefa) {
+  console.log("teste");
+  let novaTarefa = document.createElement("li");
+
   novaTarefa.className = "tarefa";
 
-  // Adicionando um eventListener na tarefa
+  novaTarefa.textContent = nomeTarefa;
+
   novaTarefa.addEventListener("click", () => {
-    // Adicionando uma classe na tarefa
     novaTarefa.classList.toggle("concluida");
   });
 
-  // Criando o botão para excluir
   let botaoExcluir = document.createElement("button");
 
-  // Definir o texto do botão excluir
   botaoExcluir.innerHTML = "Remover";
 
-  // Adicionando um evento ao botão de excluir
   botaoExcluir.addEventListener("click", () => {
-    // listaTarefas.removeChild(novaTarefa);
+    for (let i = 0; i < document.getElementsByClassName("tarefa").length; i++) {
+      if (novaTarefa == document.getElementsByClassName("tarefa")[i]) {
+        tarefasSalvas.splice(i, 1);
+      }
+    }
     novaTarefa.remove();
+    localStorage.setItem("tarefas", JSON.stringify(tarefasSalvas));
   });
 
   botaoExcluir.className = "botao-excluir";
 
-  // Adicionando o novo botão na li
+  localStorage.setItem("tarefas", JSON.stringify(tarefasSalvas));
+
   novaTarefa.appendChild(botaoExcluir);
 
-  // Resetando o valor do campo de texto
   campoTarefa.value = "";
 
   campoTarefa.focus();
-};
 
-// Adicionando eventos
-botaoAdicionar.addEventListener("click", adicionarTarefa);
+  listaTarefas.appendChild(novaTarefa);
+}
 
-campoTarefa.addEventListener("keyup", function (e) {
-  // Verificação do código da tecla enter
-  if (e.key === "Enter") {
-    adicionarTarefa();
+let botaoModo = document.getElementById("botao-modo");
+document.body.className = localStorage.getItem("modo") || "modo-claro";
+
+botaoModo.addEventListener("click", () => {
+  if (document.body.className === "modo-claro") {
+    document.body.className = "modo-escuro";
+  } else {
+    document.body.className = "modo-claro";
   }
-});
+  localStorage.setItem("modo", document.body.className)
+})
