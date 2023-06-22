@@ -1,15 +1,24 @@
-.modo-claro {
-  --cor-clara: #005566;
+body.modo-claro {
+  --cor-primaria: #005566;
+  --cor-secundaria: #00556622;
+  --cor-terciaria: #fefefe;
+}
+
+body.modo-escuro {
+  --cor-primaria: #99eeff;
+  --cor-secundaria: #99eeff77;
+  --cor-terciaria: #111;
 }
 
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
   text-align: center;
+  background-color: var(--cor-terciaria);
 }
 
 #titulo {
-  color: #005566;
+  color: var(--cor-primaria);
 }
 
 #botao-adicionar {
@@ -17,9 +26,10 @@ body {
   padding: 17px;
   width: 20%;
   border-radius: 10px;
-  border: 2px #005566 solid;
+  border: 2px var(--cor-primaria) solid;
   font-size: 20px;
-  background-color: #00556622;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-primaria);
 }
 
 #campo-tarefa {
@@ -27,12 +37,13 @@ body {
   width: 60%;
   font-size: 20px;
   border-radius: 10px;
-  border: 2px #005566 solid;
-  background-color: #00556622;
+  border: 2px var(--cor-primaria) solid;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-primaria);
 }
 
 #campo-tarefa::placeholder {
-    color: #444;
+    color: var(--cor-primaria);
 }
 
 #lista-tarefas {
@@ -46,13 +57,14 @@ body {
 .tarefa {
   margin-top: 5px;
   padding: 10px;
-  border: 2px solid #005566;
+  border: 2px solid var(--cor-primaria);
   border-radius: 10px;
   list-style-type: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #00556622;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-primaria);
   width: 80%;
 }
 
@@ -60,8 +72,7 @@ body {
   text-decoration: line-through;
   color: #aaa;
   background-color: #ddd;
-  border: 2px #444 solid;
-  text-decoration-skip: objects;
+  border: 2px var(--cor-primaria) solid;
 }
 
 .botao-excluir {
@@ -70,7 +81,6 @@ body {
   border: none;
   border-radius: 10px;
   padding: 10px;
-  text-decoration: none !important;
 }
 
 .botao-excluir:hover {
@@ -83,4 +93,14 @@ body {
 
 #botao-adicionar:hover {
     cursor: pointer;
+}
+
+#botao-modo {
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px var(--cor-primaria) solid;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-primaria);
 }

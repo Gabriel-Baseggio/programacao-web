@@ -12,8 +12,10 @@ botaoAdicionar.addEventListener("click", () => {
     return;
   }
 
-  tarefasSalvas.push(nomeTarefa);
-  adicionarTarefaNaLista(nomeTarefa)
+  let tarefa = { nome: nomeTarefa, estado: '' };
+
+  tarefasSalvas.push(tarefa);
+  adicionarTarefaNaLista(tarefa)
 });
 
 campoTarefa.addEventListener("keyup", function (e) {
@@ -24,22 +26,36 @@ campoTarefa.addEventListener("keyup", function (e) {
       alert("Dê um nome à tarefa");
       return;
     }
-    
-    tarefasSalvas.push(nomeTarefa);
-    adicionarTarefaNaLista(nomeTarefa)
+
+    let tarefa = { nome: nomeTarefa, estado: '' };
+
+    tarefasSalvas.push(tarefa);
+    adicionarTarefaNaLista(tarefa)
   }
 });
 
-function adicionarTarefaNaLista(nomeTarefa) {
-  console.log("teste");
+function adicionarTarefaNaLista(tarefa) {
+  let nomeTarefa = tarefa.nome;
+  let estadoTarefa = tarefa.estado;
   let novaTarefa = document.createElement("li");
 
   novaTarefa.className = "tarefa";
 
   novaTarefa.textContent = nomeTarefa;
 
-  novaTarefa.addEventListener("click", () => {
+  if (estadoTarefa != '') {
     novaTarefa.classList.toggle("concluida");
+
+  }
+
+  novaTarefa.addEventListener("click", () => {
+    for (let i = 0; i < document.getElementsByClassName("tarefa").length; i++) {
+      if (novaTarefa == document.getElementsByClassName("tarefa")[i]) {
+        tarefasSalvas[i].estado = tarefasSalvas[i].estado == "concluida"? "" : "concluida";
+      }
+    }
+    novaTarefa.classList.toggle("concluida");
+    localStorage.setItem("tarefas", JSON.stringify(tarefasSalvas));
   });
 
   let botaoExcluir = document.createElement("button");
