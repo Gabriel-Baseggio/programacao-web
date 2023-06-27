@@ -88,16 +88,8 @@ body {
   padding: 10px;
 }
 
-.botao-excluir:hover {
-  cursor: pointer;
-}
-
 .tarefa:hover {
   cursor: pointer;
-}
-
-#botao-adicionar:hover {
-    cursor: pointer;
 }
 
 #botao-modo {
@@ -108,4 +100,8 @@ body {
   font-weight: 700;
   background-color: var(--cor-secundaria);
   color: var(--cor-primaria);
+}
+
+button:hover {
+  cursor: pointer;
 }

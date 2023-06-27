@@ -68,7 +68,7 @@ function adicionarTarefaNaLista(tarefa) {
         tarefasSalvas.splice(i, 1);
       }
     }
-    novaTarefa.remove();
+    listaTarefas.removeChild(novaTarefa);
     localStorage.setItem("tarefas", JSON.stringify(tarefasSalvas));
   });
 
