@@ -2,15 +2,20 @@ body.modo-claro {
   --cor-primaria: #005566;
   --cor-secundaria: #00556622;
   --cor-terciaria: #fefefe;
+  --cor-concluida: #555;
+  --bgcor-concluida: #888;
 }
 
 body.modo-escuro {
   --cor-primaria: #99eeff;
   --cor-secundaria: #99eeff77;
   --cor-terciaria: #111;
+  --cor-concluida: #aaa;
+  --bgcor-concluida: #ddd;
 }
 
 body {
+  transition: 0.3s;
   font-family: Arial, sans-serif;
   padding: 20px;
   text-align: center;
@@ -70,8 +75,8 @@ body {
 
 .concluida {
   text-decoration: line-through;
-  color: #aaa;
-  background-color: #ddd;
+  color: var(--cor-concluida);
+  background-color: var(--bgcor-concluida);
   border: 2px var(--cor-primaria) solid;
 }
 

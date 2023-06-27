@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 1rem;
+    background-color: #F7F3E3;
+    color: #6F1A07;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+table, th, td {
+    border: 2px solid #2B2118;
+    padding: 0.5rem;
+}
+
+table {
+    background-color: #AF9164;
+    color: #F7F3E3;
+    font-size: 1.2rem;
+    width: 35%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td {
+    background-color: #DFD5A8;
+    color: #2B2118;
+}
