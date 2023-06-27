@@ -10,7 +10,7 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    gap: 1rem;
+    gap: 5rem;
     background-color: #F7F3E3;
     color: #6F1A07;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -23,7 +23,7 @@ table, th, td {
 
 table {
     background-color: #AF9164;
-    color: #F7F3E3;
+    color: #2B2118;
     font-size: 1.2rem;
     width: 35%;
     border-collapse: collapse;
@@ -33,4 +33,32 @@ table {
 td {
     background-color: #DFD5A8;
     color: #2B2118;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 15px;
+    border: 1px solid #2B2118;
+    border-radius: 10px;
+    background-color: #AF9164;
+    color: #2B2118;
+    width: 40%;
+}
+
+button:hover {
+    background-color: #DFD5A8;
+    cursor: pointer;
+}
+
+div {
+    width: 25%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
 }
