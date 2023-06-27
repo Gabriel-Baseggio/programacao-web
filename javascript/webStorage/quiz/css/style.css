@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-primaria: #FD4556;
+    --cor-secundaria: #BD3944;
+    --cor-terciaria: #53212B;
+    --branco: #FFFBF5;
+    --preto: #000000;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 3rem;
+    background-color: var(--cor-primaria);
+    color: var(--branco);
+    font-family: 'Bruno Ace SC', cursive;
+}
+
+table, th, td {
+    border: 2px solid var(--preto);
+    padding: 0.5rem;
+    font-family: 'Bruno Ace SC', cursive;
+}
+
+table {
+    background-color: var(--cor-secundaria);
+    color: var(--branco);
+    font-size: 1.2rem;
+    width: 35%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    background-color: var(--cor-terciaria);
+    color: var(--branco);
+}
+
+td {
+    background-color: var(--cor-secundaria);
+    color: var(--branco);
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid var(--preto);
+    border-radius: 10px;
+    background-color: var(--cor-terciaria);
+    color: var(--branco);
+    width: 40%;
+    font-family: 'Bruno Ace SC', cursive;
+}
+
+button:hover {
+    background-color: var(--cor-secundaria);
+    cursor: pointer;
+}
+
+div {
+    width: 30%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
