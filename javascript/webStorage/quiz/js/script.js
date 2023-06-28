@@ -68,7 +68,7 @@ function mostrarQuestao(q, opcoes) {
 
 function finalizar() {
     let pontosTxt = "pontos!";
-    if (pontos <= 1) {
+    if (pontos == 1) {
         pontosTxt = "ponto!"    
     }
     alert(`Parabéns ${jogador}, você conseguiu ${pontos} ${pontosTxt}`);
