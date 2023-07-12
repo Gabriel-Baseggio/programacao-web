@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climatempo</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/d253678f96.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex items-center justify-center w-screen h-screen bg-teal-400">
+
+    <div id="main" class="p-10 flex flex-col items-center justify-start gap-8 border-2 border-black border-solid rounded-md font-mono text-lg bg-neutral-50">
+        <h1 id="titulo" class="text-4xl font-bold">ClimaTempo</h1>
+        <div id="container-busca">
+            <input type="text" placeholder="Digite a cidade" id="campo-cidade" class="p-1 border-2 border-black border-solid rounded-lg">
+            <select id="campo-dias" class="p-1.5 border-2 border-black border-solid rounded-lg">
+                <option value="0">Dias</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            <button id="botao-buscar" class="p-1 px-3 border-2 border-black border-solid rounded-lg bg-purple-300 font-semibold">Buscar</button>
+        </div>
+        <div id="container-resposta" class="flex flex-col gap-2 text-center"></div>
+        <div id="cards-dias"></div>
+    </div>
+
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>
